@@ -51,6 +51,6 @@ function price (book,discount,tax,stock,purchased){
     return 0;
     
 }
-price({title : 'Aku dan Dia' , price:10000 ,printing_status :true} ,50,10,20,10);
+price({title : 'Aku dan Dia ' , price:10000 ,printing_status :true} ,50,10,20,10);
 
 
