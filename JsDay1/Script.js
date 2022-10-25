@@ -22,7 +22,7 @@ function price (book,discount,tax){
 
     }
 
-    price({title : 'Aku dan Dia' , price:10000 ,printing_status :true} ,50,10);
+   
    
 
    
@@ -31,6 +31,7 @@ function price (book,discount,tax){
 
 }
 
-console.log(price(10000,10,5));
+price({title : 'Aku dan Dia' , price:10000 ,printing_status :true} ,50,10);
+
 
 
