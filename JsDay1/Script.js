@@ -48,9 +48,32 @@ function price (book,discount,tax,stock,purchased,kredit){
     console.log('Total                  :' ,result);
     console.groupEnd();
 
-    return result;
+ 
+
+    const jumlahkredit = result/kredit;
+    let credit = [];
+
+  for( let indx = 0; indx<kredit; indx++){
+credit[indx]= jumlahkredit;
+        credit.push(credit[indx]);
+
+  }
+
+  console.log("--------------------------------------------");
+  console.log("              Pembayaran Kredit             ")
+  console.log("--------------------------------------------");
+  for(let i =0 ;i<kredit;i++){
+    console.log("Bulan Ke- "+(i+1)+" = "+credit[i]);
+  }
+
+
+
+return result;
     
 }
-price({title : 'Aku dan Dia ' , price:10000 ,printing_status :true} ,50,10,20,10);
-price({title : 'Dibawah Bulan ' , price:50000 ,printing_status :true} ,20,5,50,3);
+
+let temp =
+
+price({title : 'Aku dan Dia ' , price:10000 ,printing_status :true} ,50,10,20,10,6);
+
 
