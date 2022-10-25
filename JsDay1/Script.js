@@ -3,10 +3,10 @@
  * 
  */
 
-function price (book,discount,tax,stock,purchased){
+function price (book,discount,tax,stock,purchased,kredit){
     let result=0;
     let harga,disc,totaldisc,taxes,totaltax
-
+//purchs =2, stock =1;
     for(let i=0 ; i<purchased ; i++){
        
         if(book && book.price &&( i<stock)){
@@ -48,9 +48,9 @@ function price (book,discount,tax,stock,purchased){
     console.log('Total                  :' ,result);
     console.groupEnd();
 
-    return 0;
+    return result;
     
 }
 price({title : 'Aku dan Dia ' , price:10000 ,printing_status :true} ,50,10,20,10);
-
+price({title : 'Dibawah Bulan ' , price:50000 ,printing_status :true} ,20,5,50,3);
 
