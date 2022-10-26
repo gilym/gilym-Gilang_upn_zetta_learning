@@ -72,7 +72,7 @@ return result;
     
 }
 
-let temp =
+
 
 price({title : 'Aku dan Dia ' , price:10000 ,printing_status :true} ,50,10,20,10,6);
 
