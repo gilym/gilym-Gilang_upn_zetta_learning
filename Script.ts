@@ -12,4 +12,6 @@ function ts (text1 :combine): string{
 }
 
 const tes =[1 ,'data' ,3, 'result']
+const tes2 =['Bejo', 'has', 4, 'sport', 'car']
 console.log(ts(tes))
+console.log(ts(tes2))
