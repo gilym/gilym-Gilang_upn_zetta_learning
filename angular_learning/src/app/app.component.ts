@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component ,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  
+  styles:[`[highlight]{background: green; color: white}`,
+          '[coba]{background: red; color: white}'
+
+
+    ]
 })
-export class AppComponent {
-  title = 'angular_learning';
+
+export class AppComponent implements AfterViewInit{
+  @ViewChild('el') bgGreen?:ElementRef;
+  @ViewChild('al') bgRed?:ElementRef;
+
+
+  ngAfterViewInit(){
+    this.bgGreen?.nativeElement.setAttribute('highlight', '');
+    this.bgRed?.nativeElement.setAttribute('coba', '');
+   
+  } 
 }
