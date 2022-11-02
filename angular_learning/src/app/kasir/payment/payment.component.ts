@@ -24,13 +24,13 @@ export class PaymentComponent implements OnInit,AfterContentChecked {
  
   
   ngAfterContentChecked(): void {
-    console.log("tes")
+ 
     this.total = this.items.reduce((total, item) => total += item.amount * item.Harga , 0)
   }
 
   removeItem(itemToBeRemoved:Selecteditem){
     const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
-    const itemRef = this.items[itemIndex]
+  
     if(this.items[itemIndex].amount>1){
       this.items[itemIndex].amount-=1
     }
