@@ -40,6 +40,7 @@ export class KasirComponent implements OnInit {
     else{
       this.selectedItems.push({...item, amount: 1})
     }
+
   }
 
 
