@@ -8,7 +8,6 @@ import { Component ,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
   styles:[`[highlight]{background: green; color: white}`,
           '[coba]{background: red; color: white}'
 
-
     ]
 })
 
