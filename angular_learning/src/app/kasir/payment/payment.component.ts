@@ -48,9 +48,8 @@ export class PaymentComponent implements OnInit,AfterContentChecked,AfterViewIni
     else{
       this.items.splice(itemIndex,1);
     }
-   
-    
   
+
   }
 
 }
