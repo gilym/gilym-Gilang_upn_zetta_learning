@@ -1,3 +1,15 @@
+# Task Angular Day4
+1.
+
+2.Initialize the directive/component after Angular first displays the data-bound properties and sets the directive/component’s input properties.
+Called once, after the first ngAfterChanges.
+
+3.Respond after Angular initializes the component’s views and child views.Called once after the first ngAfterContentChecked.
+A component-only hook.
+
+4.Respond after Angular initializes the component’s views and child views.Called once after the first ngAfterContentChecked.
+
+A component-only hook.
 # AngularLearning
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
