@@ -1,6 +1,6 @@
-import { Component, OnInit,Output,EventEmitter,Input,SimpleChange, OnChanges, SimpleChanges, AfterContentChecked } from '@angular/core';
-import { Selecteditem } from '../kasir/kasir.component';
-
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { map, Observable, pipe } from 'rxjs';
+import { KasirService, Selecteditem } from '../kasir.service';
 
 
 
@@ -10,37 +10,46 @@ import { Selecteditem } from '../kasir/kasir.component';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit,AfterContentChecked {
-  @Input() items!: Selecteditem[];
-  @Output () itemChanges : EventEmitter<Selecteditem[]> = new EventEmitter <Selecteditem[]>;
+  public items : Observable<Selecteditem[]>
+  public total : Observable<number>
 
-  public total :number = 0;
-
-
-  constructor() { }
+  constructor(private kasirService : KasirService) { 
+    console.log("hahaha");
+    
+     this.items = this.kasirService.selectedItems$
+     this.total = this.kasirService.selectedItems$.pipe(
+      map((items) => items.reduce((total, item) => total += item.amount * item.Harga , 0))
+    )
+     
+  }
 
   ngOnInit(): void {
   }
 
  
   
-  ngAfterContentChecked(): void {
- 
-    this.total = this.items.reduce((total, item) => total += item.amount * item.Harga , 0)
+  ngAfterContentChecked() {
+    
+    this.total = this.kasirService.selectedItems$.pipe(
+      map((items) => items.reduce((total, item) => total += item.amount * item.Harga , 0))
+    )
+    
+    
   }
 
-  removeItem(itemToBeRemoved:Selecteditem){
-    const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
+  // removeItem(itemToBeRemoved:Selecteditem){
+  //   const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
   
-    if(this.items[itemIndex].amount>1){
-      this.items[itemIndex].amount-=1
-    }
-    else{
-      this.items.splice(itemIndex,1);
-    }
+  //   if(this.items[itemIndex].amount>1){
+  //     this.items[itemIndex].amount-=1
+  //   }
+  //   else{
+  //     this.items.splice(itemIndex,1);
+  //   }
    
     
   
-  }
+  // }
 
 }
 

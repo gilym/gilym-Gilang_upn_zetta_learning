@@ -1,22 +1,28 @@
 import { Component, Input, OnInit,EventEmitter,Output } from '@angular/core';
-import { item } from '../kasir/kasir.component';
-
+import { Observable } from 'rxjs';
+import { item, KasirService } from '../kasir.service';
+export interface items {id : number , name : string , Harga : number}
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @Input('items') items: item[]=[]
-  @Output ('itemAdded') onAddItem : EventEmitter<item> = new EventEmitter<item>()
+public items : Observable<item[]>
 
-  constructor() { }
+  constructor(private kasirService: KasirService) { 
+    this.items = this.kasirService.items$
+  }
 
   ngOnInit(): void {
+
+
   }
 
   addItem(item :item) : void{
-    this.onAddItem.emit(item)
+    this.kasirService.addItem(item);
+   
+    
   }
 
 }
