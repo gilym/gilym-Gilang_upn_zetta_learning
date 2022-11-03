@@ -1,4 +1,4 @@
-import { Component ,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
+import { Component ,AfterViewInit,ElementRef,ViewChild ,OnInit} from '@angular/core';
 
 
 @Component({
@@ -11,10 +11,13 @@ import { Component ,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
     ]
 })
 
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements OnInit,AfterViewInit{
   @ViewChild('el') bgGreen?:ElementRef;
   @ViewChild('al') bgRed?:ElementRef;
 
+ngOnInit():void{
+
+}
 
   ngAfterViewInit(){
     this.bgGreen?.nativeElement.setAttribute('highlight', '');
