@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { KasirComponent } from './kasir/kasir.component'; 
 
 
+
 const routes: Routes = [
 
 {

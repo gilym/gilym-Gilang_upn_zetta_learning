@@ -3,15 +3,23 @@ import { Component,AfterViewInit,ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles :['[bg]{ background-color: red}']
+  styleUrls: ['./app.component.scss'],
+
+  styles:[`[highlight]{background: #f5a95d}`,
+  '[coba]{background: red; color: white}'
+
+]
 })
 export class AppComponent implements AfterViewInit  {
   title = 'angular_learning';
-  @ViewChild ('bgaq') li?:ElementRef
+   @ViewChild('el') bgGreen?:ElementRef;
+  @ViewChild('al') bgRed?:ElementRef;
 
 
 
-  ngAfterViewInit() {
-    this.li?.nativeElement.setAttribute('bgaq','')
-}
+  ngAfterViewInit(){
+    this.bgGreen?.nativeElement.setAttribute('highlight', '');
+    this.bgRed?.nativeElement.setAttribute('coba', '');
+   
+  } 
 }

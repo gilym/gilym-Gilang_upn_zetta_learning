@@ -5,12 +5,16 @@ import { item } from '../kasir/kasir.component';
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  styles :['[bg]{ background-color: red}']
+  styles:['[bgaq]{  background-color: aquamarine;}',
+  '[coba]{background: red; color: white}'
+
+]
 })
 export class MenuComponent implements OnInit ,AfterViewInit{
   @Input('items') items: item[]=[]
   @Output ('itemAdded') onAddItem : EventEmitter<item> = new EventEmitter<item>()
-  @ViewChild ('bgaq') li?:ElementRef;
+  @ViewChild('bgaq') bgaq?:ElementRef;
+  @ViewChild('al') bgRed?:ElementRef;
 
   constructor() { }
 
@@ -20,8 +24,12 @@ export class MenuComponent implements OnInit ,AfterViewInit{
   addItem(item :item) : void{
     this.onAddItem.emit(item)
   }
-  ngAfterViewInit() {
-      this.li?.nativeElement.setAttribute('bgaq','')
-  }
+
+  ngAfterViewInit(){
+    this.bgaq?.nativeElement.setAttribute('bgaq', '');
+    this.bgRed?.nativeElement.setAttribute('coba', '');
+   
+  } 
+  
 
 }

@@ -1,7 +1,7 @@
 <h1>Menu</h1>
-<ul>
-    <li #bgaq *ngFor="let item of items" (click)="onAddItem.emit(item)">
-        <h3 >{{ item.name}}</h3>
+<ul #bgaq >
+    <li  *ngFor="let item of items" (click)="onAddItem.emit(item)"  >
+        <h3  >{{ item.name}}</h3>
         <p>
             Rp. {{item.Harga}}
         </p>
