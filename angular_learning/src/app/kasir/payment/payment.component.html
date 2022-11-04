@@ -3,7 +3,7 @@
     <tr *ngFor = "let item of (items| async)">
         <td><span>{{ item.amount }} x {{item.name}}</span></td>
         <td><span>Rp. {{item.Harga}}</span> </td>
-        <td> <button type="button" class="btn btn-outline-danger" > Remove</button></td>
+        <td> <button type="button" class="btn btn-outline-danger"  (click)="removeitem(item)"> Remove</button></td>
 
     </tr>
 

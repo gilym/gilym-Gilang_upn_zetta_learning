@@ -37,4 +37,16 @@ export class KasirService{
         }
     
       }
+
+      removeItem(itemToBeRemoved:Selecteditem){
+        const itemIndex = this.selectedItems.value.findIndex(({id}) => id ===itemToBeRemoved.id)
+      
+        if(this.selectedItems.value[itemIndex].amount>1){
+          this.selectedItems.value[itemIndex].amount-=1
+        }
+        else{
+          this.selectedItems.value.splice(itemIndex,1);
+        }
+     
+      }
 }

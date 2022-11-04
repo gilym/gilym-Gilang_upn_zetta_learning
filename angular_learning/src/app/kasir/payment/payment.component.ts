@@ -37,19 +37,9 @@ export class PaymentComponent implements OnInit,AfterContentChecked {
     
   }
 
-  // removeItem(itemToBeRemoved:Selecteditem){
-  //   const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
-  
-  //   if(this.items[itemIndex].amount>1){
-  //     this.items[itemIndex].amount-=1
-  //   }
-  //   else{
-  //     this.items.splice(itemIndex,1);
-  //   }
-   
-    
-  
-  // }
+removeitem(item :Selecteditem){
+  this.kasirService.removeItem(item)
+}
 
 }
 
