@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit ,AfterViewInit{
   constructor() { }
 
   ngOnInit(): void {
-    console.log("hai from init")
+    
   }
 
   addItem(item :item) : void{
@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit ,AfterViewInit{
   }
 
   ngAfterViewInit(){
-    console.log("hai from view")
+
     this.bgaq?.nativeElement.setAttribute('bgaq', '');
     this.bgRed?.nativeElement.setAttribute('coba', '');
    
