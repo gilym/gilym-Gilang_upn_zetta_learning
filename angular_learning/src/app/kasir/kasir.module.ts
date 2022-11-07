@@ -6,16 +6,25 @@ import { KasirComponent } from './kasir/kasir.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaymentComponent } from './payment/payment.component';
 
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+
+
+
 
 @NgModule({
   declarations: [
     KasirComponent,
     MenuComponent,
-    PaymentComponent
+    PaymentComponent,
+ 
+    
   ],
   imports: [
     CommonModule,
-    KasirRoutingModule
+    KasirRoutingModule,
+    MatTableModule,
+    MatButtonModule
   ]
 })
 export class KasirModule { }

@@ -1,5 +1,6 @@
 export interface item {id : number , name : string , Harga : number}
 export interface Selecteditem {id : number , name : string , Harga : number, amount : number}
+export interface employ {id : number , name : string , position : string , availability : string ,action : string}
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs"
 
@@ -20,10 +21,14 @@ export class KasirService{
         {id : 10 , name : 'Extra Joss Susu(Josua)', Harga: 6000}
       ])
     
-      private selectedItems : BehaviorSubject<Selecteditem[]> = new BehaviorSubject<Selecteditem[]>([]);
+      private selectedItems : BehaviorSubject<Selecteditem[]> = new BehaviorSubject<Selecteditem[]>([
+    ]);
+
+     
 
       public items$ = this.items.asObservable();
       public selectedItems$ = this.selectedItems.asObservable();
+ 
 
 
       addItem(item :item){
