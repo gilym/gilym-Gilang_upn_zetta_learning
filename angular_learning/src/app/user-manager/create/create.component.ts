@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Form, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserManagerService } from '../user-manager.service';
 
 interface pos {
   value: string;
@@ -15,7 +17,7 @@ export class CreateComponent implements OnInit {
 
   public form : FormGroup 
 
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder ,private router : Router, private Service : UserManagerService ) { 
     this.form = this.fb.group({
       id : [null ,[Validators.required]],
       name : [null ,[Validators.required]],
@@ -52,7 +54,14 @@ export class CreateComponent implements OnInit {
     })
   }
 
-  
+  submit() : void {
+    const payload = this.form.value;
+    console.log(payload);
+    this.Service.addUser(payload)
+    this.router.navigate(['..'])
+    
+    
+  }
 
 
 

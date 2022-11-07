@@ -28,8 +28,8 @@
 
                 <mat-radio-group aria-label="Select an option" formControlName="gender">
                     <mat-label>Gender</mat-label>
-                    <mat-radio-button value="1">Male</mat-radio-button>
-                    <mat-radio-button value="2">Female</mat-radio-button>
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
                   </mat-radio-group>
 
                   <mat-form-field class="example-full-width">
@@ -57,15 +57,15 @@
                         </mat-form-field>
                         <mat-form-field   class="half" >
                             <mat-label>Zip</mat-label>
-                            <input type="text" matInput formControlName="addres">
+                            <input type="text" matInput formControlName="zip">
                         </mat-form-field>
                         <mat-form-field  class="half"  >
                             <mat-label>City</mat-label>
-                            <input type="text" matInput formControlName="addres">
+                            <input type="text" matInput formControlName="city">
                         </mat-form-field>
                         <mat-form-field  class="half" id="end">
                             <mat-label>Provinsi</mat-label>
-                            <input type="text" matInput formControlName="addres">
+                            <input type="text" matInput formControlName="country">
                         </mat-form-field>
                     </li>
                   </ul>
@@ -75,7 +75,7 @@
     
   </mat-card>
   <div class="butt">
-      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="primary" (click)="submit()">Primary</button>
 
   </div>
 

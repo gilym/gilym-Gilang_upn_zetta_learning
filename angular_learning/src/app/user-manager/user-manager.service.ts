@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable,BehaviorSubject } from "rxjs";
+export interface User {id : string ,name : string}
+ 
 
 @Injectable({
     providedIn :'root'
@@ -24,6 +26,8 @@ addUser(payload : User):void{
     else{
         this._users.value.push(payload)
     }
+    console.log(this._users);
+    
 }
 
 
