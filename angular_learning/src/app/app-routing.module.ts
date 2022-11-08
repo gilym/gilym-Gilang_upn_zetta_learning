@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListComponent } from './user-manager/list/list.component';
 
 const routes: Routes = [
+  
   {
-    path : '**',
-    redirectTo : 'user-management'
-
+    path : 'create',
+    loadChildren:()=>import('./user-manager/user-manager.module').then(m=> m.UserManagerModule),
   },
   {
-    path : 'user-management',
-    loadChildren:()=>import('./user-manager/user-manager.module').then(m=> m.UserManagerModule),
+    path: 'list',
+    component : ListComponent
+    
+  },
+  {
+    path : '**',
+    redirectTo : 'list'
   }
 ];
 

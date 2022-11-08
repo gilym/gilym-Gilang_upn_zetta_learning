@@ -58,7 +58,7 @@ export class CreateComponent implements OnInit {
     const payload = this.form.value;
     console.log(payload);
     this.Service.addUser(payload)
-    this.router.navigate(['..'])
+    this.router.navigate(['user-management','list'])
     
     
   }
