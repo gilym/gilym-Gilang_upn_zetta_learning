@@ -1,6 +1,15 @@
 
+
+<p>
+  <mat-toolbar color="primary">
+   
+    <span>My App</span>
+    <span class="example-spacer"></span>
+      <button mat-raised-button   [routerLink]="['..','create' ]" >Add User</button>
+  </mat-toolbar>
+</p>
 <mat-card class="example-card">
-  <a  [routerLink]="['..','lisat' ]">	<mat-icon>subdirectory_arrow_left</mat-icon>Back</a>
+  <a  [routerLink]="['..','list' ]">	<mat-icon>subdirectory_arrow_left</mat-icon>Back</a>
     <mat-card-content>
         <form [formGroup]="form"  >
             <mat-form-field  class="example-full-width">
@@ -75,7 +84,7 @@
     
   </mat-card>
   <div class="butt">
-      <button mat-raised-button color="primary"  [routerLink]="['..','list' ]" (click)="submit()">Primary</button>
+      <button mat-raised-button color="primary"  [routerLink]="['..','list' ]" (click)="submit()" class="sbm">Primary</button>
 
   </div>
 

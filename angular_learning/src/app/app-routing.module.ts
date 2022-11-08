@@ -5,17 +5,13 @@ import { ListComponent } from './user-manager/list/list.component';
 const routes: Routes = [
   
   {
-    path : 'create',
+    path : 'user-managment',
     loadChildren:()=>import('./user-manager/user-manager.module').then(m=> m.UserManagerModule),
   },
-  {
-    path: 'list',
-    component : ListComponent
-    
-  },
+
   {
     path : '**',
-    redirectTo : 'list'
+    redirectTo : 'user-managment'
   }
 ];
 

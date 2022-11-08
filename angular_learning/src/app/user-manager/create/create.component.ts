@@ -48,7 +48,7 @@ export class CreateComponent implements OnInit {
   adressformgrup() : FormGroup {
     return this.fb.group({
       addres : [null ,[Validators.required]],
-      zip : [null ,[Validators.required,Validators.min(6),Validators.max(9)]],
+      zip : [null ,[Validators.required,Validators.minLength(6),Validators.maxLength(9)]],
       city : [null ,[Validators.required]],
       country : [null ,[Validators.required]],
     })

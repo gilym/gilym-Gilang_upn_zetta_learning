@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
   public list : Observable<User[]>
   constructor(private service : UserManagerService) { 
     this.list = this.service.users$
+   console.log(this.list);
    
     
   }

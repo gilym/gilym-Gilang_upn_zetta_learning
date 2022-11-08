@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable,BehaviorSubject } from "rxjs";
-export interface User {id : string ,name : string ,email: string, age : number , gender : string , position :string, maritel : string , addres : addres} 
+export interface User {id : string ,name : string ,email: string, age : number , gender : string , position :string, maritel : string , addresgrup : addres[]} 
 export interface addres {addres :string , zip : string ,  kota : string , provinsi : string}
  
 
@@ -30,6 +30,15 @@ addUser(payload : User):void{
     console.log(this._users);
     
 }
+
+getListById(id:string) : any{
+    const listarray = this._users.getValue();
+    console.log(listarray)
+    const list = listarray.find(list => list.id ===id)
+    return list || null;
+    
+  
+  }
 
 
 }
