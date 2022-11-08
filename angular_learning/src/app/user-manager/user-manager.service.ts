@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable,BehaviorSubject } from "rxjs";
-export interface User {id : string ,name : string ,email: string, age : number , gender : string , position :string, maritel : string , addresgrup : addres[]} 
-export interface addres {addres :string , zip : string ,  kota : string , provinsi : string}
+export interface User {id : string ,name : string ,email: string, age : number , gender : string , position :string, marital : string , addresgrup : addres[]} 
+export interface addres {addres :string , zip : string ,  city : string , country : string}
  
 
 @Injectable({

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 
 import { UserManagerRoutingModule } from './user-manager-routing.module';
 
@@ -39,7 +40,8 @@ import { DetailComponent } from './detail/detail.component'
     ReactiveFormsModule,
     MatIconModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    UpperCasePipe
   ]
 })
 export class UserManagerModule { }

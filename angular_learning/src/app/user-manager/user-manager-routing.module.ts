@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { DetailComponent } from './detail/detail.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   
@@ -22,6 +23,11 @@ const routes: Routes = [
       path: 'detail/:id' ,
       pathMatch:'full',
       component:DetailComponent
+    },
+    {
+      path: 'edit/:id' ,
+      pathMatch:'full',
+      component:EditComponent
     },
     {
       path: '**' ,

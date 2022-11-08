@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserManagerService } from '../user-manager.service';
-export interface List {id : string ,name : string ,email: string, age : number , gender : string , position :string, maritel : string , addresgrup : addres[]} 
-export interface addres {addres :string , zip : string ,  kota : string , provinsi : string}
+export interface List {id : string ,name : string ,email: string, age : number , gender : string , position :string, marital : string , addresgrup : addres[]} 
+export interface addres {addres :string , zip : string ,  city : string , country : string}
 
 @Component({
   selector: 'app-detail',
@@ -21,6 +21,8 @@ export class DetailComponent implements OnInit {
     if(typeof this.listid === 'string'){
       this.list = this.service.getListById(this.listid)
     }
+    
+    
   }
 
 }

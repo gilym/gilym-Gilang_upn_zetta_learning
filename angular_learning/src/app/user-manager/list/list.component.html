@@ -13,12 +13,9 @@
         <mat-card-content>
             <mat-icon>account_circle</mat-icon>
             <h2>{{list.name}}</h2>
-            <span>{{list.position}}</span>
-            <!-- <span *ngFor="let address of list?.addresgrup">
-                {{address?.addres}}
-                {{address?.zip}}
-            </span> -->
            
+            <span>{{list.position}}</span>
+          
           
            
            
@@ -29,7 +26,7 @@
                         <a  [routerLink]="['..','detail',list.id]">detail</a>
                     </td>
                     <td>
-                        <a >Ubah</a>
+                        <a [routerLink]="['..','edit' ,list.id]" >Ubah</a>
                     </td>
                 </tr>
             </table>

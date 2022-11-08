@@ -18,6 +18,7 @@ export class CreateComponent implements OnInit {
   public form : FormGroup 
 
   constructor(private fb : FormBuilder ,private router : Router, private Service : UserManagerService ) { 
+    
     this.form = this.fb.group({
       id : [null ,[Validators.required]],
       name : [null ,[Validators.required]],
@@ -29,6 +30,7 @@ export class CreateComponent implements OnInit {
       addresgrup : this.fb.array([this.adressformgrup()])
       
     })
+
   }
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
