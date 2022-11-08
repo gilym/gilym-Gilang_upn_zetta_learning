@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable,BehaviorSubject } from "rxjs";
-export interface User {id : string ,name : string}
+export interface User {id : string ,name : string ,email: string, age : number , gender : string , position :string, maritel : string , addres : addres} 
+export interface addres {addres :string , zip : string ,  kota : string , provinsi : string}
  
 
 @Injectable({

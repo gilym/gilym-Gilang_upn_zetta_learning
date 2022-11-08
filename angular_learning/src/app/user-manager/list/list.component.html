@@ -1,8 +1,28 @@
-
+<h1>List User</h1>
    <div class="container">
+   
     <mat-card   *ngFor = "let list of (list| async)">
         <mat-card-content>
-            {{list.id}}
+            <mat-icon>account_circle</mat-icon>
+            <h2>{{list.name}}</h2>
+            <span>{{list.position}}</span>
+            <span>{{list.addres}}</span>
+          
+           
+           
+
+            <table>
+                <tr>
+                    <td class="dtl">
+                        <a >detail</a>
+                    </td>
+                    <td>
+                        <a >Ubah</a>
+                    </td>
+                </tr>
+            </table>
+           
+           
         </mat-card-content>
     </mat-card>
    </div>
@@ -12,4 +32,3 @@
 
   
 
-<h1>hahah</h1>
