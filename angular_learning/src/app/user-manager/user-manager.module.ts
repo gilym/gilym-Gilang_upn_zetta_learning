@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list'
 
 
 import {ReactiveFormsModule} from '@angular/forms';
@@ -41,7 +42,9 @@ import { DetailComponent } from './detail/detail.component'
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
-    UpperCasePipe
+    UpperCasePipe,
+    MatListModule
+    
   ]
 })
 export class UserManagerModule { }
