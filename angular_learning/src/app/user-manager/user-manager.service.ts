@@ -27,7 +27,10 @@ addUser(payload : User):void{
     else{
         this._users.value.push(payload)
     }
+
     console.log(this._users);
+    
+  
     
 }
 

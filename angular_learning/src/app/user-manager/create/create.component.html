@@ -58,26 +58,32 @@
                     </mat-select>
                   </mat-form-field>
 
-                  <ul formArrayName = "addresgrup">
-                    <li *ngFor = "let group of addres.controls; let idx = index" [formGroupName]="idx">
-                        <mat-form-field  class="example-full-width">
-                            <mat-label>Addres</mat-label>
-                            <input type="text" matInput formControlName="addres">
-                        </mat-form-field>
-                        <mat-form-field   class="half" >
-                            <mat-label>Zip</mat-label>
-                            <input type="text" matInput formControlName="zip">
-                        </mat-form-field>
-                        <mat-form-field  class="half"  >
-                            <mat-label>City</mat-label>
-                            <input type="text" matInput formControlName="city">
-                        </mat-form-field>
-                        <mat-form-field  class="half" id="end">
-                            <mat-label>Provinsi</mat-label>
-                            <input type="text" matInput formControlName="country">
-                        </mat-form-field>
+                  <ul formArrayName = "addresgrup"  *ngFor = "let group of addres.controls; let idx = index">
+                    <li [formGroupName]="idx">
+                      
+                      <div  >
+                         <mat-form-field  class="example-full-width">
+                        <mat-label>Addres {{idx+1}} </mat-label>
+                        <input type="text" matInput formControlName="addres">
+                    </mat-form-field>
+                    <mat-form-field  class="half" >
+                        <mat-label>Zip</mat-label>
+                        <input type="text" matInput formControlName="zip">
+                    </mat-form-field>
+                    <mat-form-field  class="half"  >
+                        <mat-label>City</mat-label>
+                        <input type="text" matInput formControlName="city">
+                    </mat-form-field>
+                    <mat-form-field  class="half" id="end">
+                        <mat-label>Provinsi</mat-label>
+                        <input type="text" matInput formControlName="country">
+                    </mat-form-field> </div>
+                       
+                        
                     </li>
                   </ul>
+                  <div class="addrs">  <button mat-stroked-button class="add" (click)="add()">Add Addres</button> </div>
+                 
            
         </form>
     </mat-card-content>

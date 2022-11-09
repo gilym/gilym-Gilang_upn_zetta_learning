@@ -59,10 +59,10 @@
                       </mat-select>
                     </mat-form-field>
   
-                    <ul formArrayName = "addresgrup">
-                      <li *ngFor = "let group of addres.controls; let idx = index" [formGroupName]="idx">
+                    <ul formArrayName = "addresgrup" *ngFor = "let group of addres.controls; let idx = index">
+                      <li  [formGroupName]="idx">
                           <mat-form-field  class="example-full-width">
-                              <mat-label>Addres</mat-label>
+                              <mat-label>Addres{{idx+1}}</mat-label>
                               <input type="text" matInput formControlName="addres">
                           </mat-form-field>
                           <mat-form-field   class="half" >
@@ -79,6 +79,7 @@
                           </mat-form-field>
                       </li>
                     </ul>
+                    <div class="addrs">  <button mat-stroked-button class="add" (click)="add()">Add Addres</button> </div>
              
           </form>
       </mat-card-content>

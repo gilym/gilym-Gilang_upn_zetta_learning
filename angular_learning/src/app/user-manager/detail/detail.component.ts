@@ -13,6 +13,9 @@ export class DetailComponent implements OnInit {
   private listid : string|null =null
   public list : List|null = null
 
+ 
+
+
   constructor(private route: ActivatedRoute , private service : UserManagerService) { 
     this.listid = this.route.snapshot.paramMap.get('id')
   }
@@ -22,7 +25,7 @@ export class DetailComponent implements OnInit {
       this.list = this.service.getListById(this.listid)
     }
     
-    
   }
+ 
 
 }
