@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UpperCasePipe } from '@angular/common';
 
+
 import { UserManagerRoutingModule } from './user-manager-routing.module';
 
 import { CreateComponent } from './create/create.component';
@@ -16,11 +17,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list'
+import { FormsModule } from '@angular/forms';
+
 
 
 
 import {ReactiveFormsModule} from '@angular/forms';
-import { DetailComponent } from './detail/detail.component'
+import { DetailComponent } from './detail/detail.component';
+import { FilterPipe } from './filter.pipe'
 
 
 @NgModule({
@@ -29,7 +33,8 @@ import { DetailComponent } from './detail/detail.component'
     CreateComponent,
     ListComponent,
     EditComponent,
-    DetailComponent
+    DetailComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -44,7 +49,9 @@ import { DetailComponent } from './detail/detail.component'
     MatToolbarModule,
     MatDividerModule,
     UpperCasePipe,
-    MatListModule
+    MatListModule,
+    FormsModule
+   
     
   ]
 })

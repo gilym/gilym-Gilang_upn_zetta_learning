@@ -33,6 +33,9 @@ addUser(payload : User):void{
   
     
 }
+getAllUser(){
+    return this._users
+}
 
 getListById(id:string) : any{
     const listarray = this._users.getValue();

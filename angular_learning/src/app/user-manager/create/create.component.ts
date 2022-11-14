@@ -33,7 +33,7 @@ export class CreateComponent implements OnInit {
     
     this.form = this.fb.group({
       id : [null ,[Validators.required ,Validators.pattern("^[0-9]*$")]],
-      name : [null ,[Validators.required ,Validators.pattern("^[a-z,A-Z ]*$")]],
+      name : [null ,[Validators.required ]],
       age : [null ,[Validators.required,Validators.min(10) , Validators.pattern("^[0-9]*$")]],
       gender : [null ,[Validators.required]],
       email : [null ,[Validators.required , Validators.email]],
@@ -65,7 +65,7 @@ export class CreateComponent implements OnInit {
   
 
 
-    this.form.get('name')?.valueChanges.subscribe(this.name.bind(this));
+    // this.form.get('name')?.valueChanges.subscribe(this.name.bind(this));
     this.form.get('id')?.valueChanges.subscribe(this.id.bind(this));
     
 
