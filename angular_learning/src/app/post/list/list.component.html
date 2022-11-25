@@ -1,0 +1,30 @@
+
+  <mat-toolbar color="primary" class="header">
+     <div class="headertext">
+      <span  >Welcome To My Blog</span>
+     </div>
+   
+   
+  </mat-toolbar>
+
+
+    
+
+
+
+
+ 
+
+
+
+
+<mat-card class="card">
+  <ul>
+    <li *ngFor="let post of posts | async ">
+      <h1> {{post.title }}</h1>
+      <p> {{post.body}}</p>
+     
+    </li>
+  </ul>
+</mat-card>
+
