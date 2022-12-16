@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User, UserManagerService } from '../user-manager.service';
+export interface Users {id : string ,name : string ,email: string, age : number , gender : string , position :string, marital : string , addresgrup : addres[]} 
+export interface addres {addres :string , zip : string ,  city : string , country : string}
 
 
 @Component({
@@ -11,34 +13,29 @@ import { User, UserManagerService } from '../user-manager.service';
 export class ListComponent implements OnInit {
   public list : Observable<User[]>
   users;
+  public temp :Users []=[]
+  
   constructor(private service : UserManagerService) { 
     this.list = this.service.users$
    console.log(this.list);
    this.users = this.service.getAllUser();
+  this.list.subscribe(tes =>{
+    this.temp=tes
+  })
+  console.log(this.temp);
 
   }
+
   filterString : string= ''
+
+  save (){
+    this.service.exportAsExcelFile(this.temp,"Sample")
+  }
 
   ngOnInit(): void {
   }
 
 
-  // searchUser(event: any){
-  //   this.users = [];
-  //   let name, keyword;
-  //   this.service.getAllUser().forEach((item) => {
-  //     name = this.normalizeText(item.name);
-  //     keyword = this.normalizeText(event.target.value);
-      
-  //     if(name.includes(keyword)) this.users.push(item)
-  //   })
-  // }
-
-  // normalizeText(text: string){
-  //   text = text.replace(/\s/g, '');
-  //   text = text.toLowerCase();
-  //   text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  //   return text
-  // }
+  
 
 }
